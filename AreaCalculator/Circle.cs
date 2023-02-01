@@ -14,8 +14,8 @@ public class Circle : Figure
     /// <exception cref="ArgumentOutOfRangeException">If radius is less than zero.</exception>
     public Circle(double radius)
     {
-        if (radius < 0) 
-            throw new ArgumentOutOfRangeException(nameof(radius),"Radius cannot be negative.");
+        if (radius <= 0) 
+            throw new ArgumentOutOfRangeException(nameof(radius),"Radius must be positive.");
         Radius = radius;
     }
 
