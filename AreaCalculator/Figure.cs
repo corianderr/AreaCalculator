@@ -2,7 +2,15 @@ namespace AreaCalculator;
 
 public abstract class Figure
 {
-    public double Area { get; set; }
+    private double _area;
+    public double Area {
+        get
+        {
+            if (_area == 0) _area = CalculateArea();
+            return _area;
+        }
+        set => _area = value;
+    }
 
-    public abstract double CalculateArea();
+    protected abstract double CalculateArea();
 }
