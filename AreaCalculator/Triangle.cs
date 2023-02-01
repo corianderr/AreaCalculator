@@ -46,4 +46,13 @@ public class Triangle : Figure
     {
         return FirstSide + SecondSide + ThirdSide;
     }
+
+    private bool IsRightAngled()
+    {
+        var maxSide = new[] { FirstSide, SecondSide, ThirdSide }.Max();
+        var maxSquare = maxSide * maxSide;
+        var sqrSum = FirstSide * FirstSide + SecondSide * SecondSide + ThirdSide * ThirdSide;
+        return Math.Abs(maxSquare * 2 - sqrSum) < 0.00000001;
+        
+    }
 }
