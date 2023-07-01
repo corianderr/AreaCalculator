@@ -3,10 +3,12 @@ namespace AreaCalculator;
 public abstract class Figure
 {
     private double _area;
+
     /// <summary>
-    /// Figure area.
+    ///     Figure area.
     /// </summary>
-    public double Area {
+    public double Area
+    {
         get
         {
             if (_area == 0) _area = CalculateArea();
@@ -14,8 +16,9 @@ public abstract class Figure
         }
         set => _area = value;
     }
+
     /// <summary>
-    /// Calculates area of a figure.
+    ///     Calculates area of a figure.
     /// </summary>
     /// <returns>Floating point value of area.</returns>
     protected abstract double CalculateArea();

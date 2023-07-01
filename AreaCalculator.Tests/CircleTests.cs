@@ -7,10 +7,10 @@ public class CircleTests
     {
         // Arrange
         double radius = 5;
-        Circle circle = new Circle(radius);
+        var circle = new Circle(radius);
 
         // Act
-        double area = circle.Area;
+        var area = circle.Area;
 
         // Assert
         Assert.Equal(Math.PI * radius * radius, area);

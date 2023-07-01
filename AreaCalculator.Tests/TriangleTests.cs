@@ -9,10 +9,10 @@ public class TriangleTests
         double sideA = 3;
         double sideB = 4;
         double sideC = 5;
-        Triangle triangle = new Triangle(sideA, sideB, sideC);
+        var triangle = new Triangle(sideA, sideB, sideC);
 
         // Act
-        double area = triangle.Area;
+        var area = triangle.Area;
 
         // Assert
         Assert.Equal(6, area);
@@ -34,10 +34,10 @@ public class TriangleTests
         double sideA = 3;
         double sideB = 4;
         double sideC = 5;
-        Triangle triangle = new Triangle(sideA, sideB, sideC);
+        var triangle = new Triangle(sideA, sideB, sideC);
 
         // Act
-        bool isRightAngled = triangle.IsRightAngled;
+        var isRightAngled = triangle.IsRightAngled;
 
         // Assert
         Assert.True(isRightAngled);
