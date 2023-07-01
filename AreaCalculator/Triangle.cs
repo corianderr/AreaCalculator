@@ -2,7 +2,7 @@ namespace AreaCalculator;
 
 public class Triangle : Figure
 {
-    private double _perimeter;
+    private double _halfPerimeter;
     /// <summary>
     /// First side of a triangle.
     /// </summary>
@@ -18,14 +18,13 @@ public class Triangle : Figure
     /// <summary>
     /// Perimeter of a triangle.
     /// </summary>
-    public double Perimeter
+    public double HalfPerimeter
     {
         get
         {
-            if (_perimeter == 0) _perimeter = CalculatePerimeter();
-            return _perimeter;
+            if (_halfPerimeter == 0) _halfPerimeter = CalculatePerimeter() / 2;
+            return _halfPerimeter;
         }
-        init => _perimeter = value;
     }
     /// <summary>
     /// Perimeter of a triangle.
@@ -51,13 +50,12 @@ public class Triangle : Figure
         FirstSide = firstSide;
         SecondSide = secondSide;
         ThirdSide = thirdSide;
-        Perimeter = firstSide + secondSide + thirdSide;
         IsRightAngled = CheckIsRightAngled();
     }
     
     protected sealed override double CalculateArea()
     {
-        return Math.Sqrt(Perimeter * (Perimeter - FirstSide) * (Perimeter - SecondSide) * (Perimeter - ThirdSide));
+        return Math.Sqrt(HalfPerimeter * (HalfPerimeter - FirstSide) * (HalfPerimeter - SecondSide) * (HalfPerimeter - ThirdSide));
     }
 
     /// <summary>
